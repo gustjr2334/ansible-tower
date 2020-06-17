@@ -1,6 +1,6 @@
 - name: Get Device OS
   hosts: all
-  connection: netconf
+  connection: local
   gather_facts: no
 
   tasks:
