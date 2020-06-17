@@ -9,4 +9,4 @@
       register: version
 
     - debug:
-        msg: "{{version.ansible_net_version}}"
+        msg: "{{ansible_net_version}}"
