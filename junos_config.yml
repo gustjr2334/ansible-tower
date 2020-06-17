@@ -1,0 +1,16 @@
+- name: Get Device OS
+  hosts: QFX
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: Retrieve facts from devices running Junos OS
+      junos_config:
+        lines:
+          - set vlans VLAN_ansible vlan-id 100
+          - set vlans VLAN_ansible l3-interface irb.100
+          - set interfaces irb unit 100 family inet address 100.1.1.1/24
+
+    - name: Check correctness of commit configuration
+      junos_config:
+        check_commit: yes
