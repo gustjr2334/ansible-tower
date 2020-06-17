@@ -6,8 +6,8 @@
   tasks:
     - name: Retrieve facts from devices running Junos OS
       junos_facts:
-        provider: "{{ credentials }}"
+      register: version
 
     - name: Print version
       debug:
-        var: ansible_net_version
+        msg: version.ansible_net_version
