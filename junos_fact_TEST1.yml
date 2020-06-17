@@ -10,4 +10,4 @@
 
     - name: Print version
       debug:
-        msg: version.ansible_net_version
+        msg: "{{version.ansible_net_version}}"
