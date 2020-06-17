@@ -1,5 +1,5 @@
 - name: Get Device OS
-  hosts: QFX
+  hosts: all
   connection: local
   gather_facts: no
 
