@@ -1,0 +1,15 @@
+---
+- name: Get Device OS
+  hosts:
+    - all
+  connection: netconf
+  gather_facts: no
+
+  tasks:
+
+    - name: Retrieve facts from devices running Junos OS
+      junos_facts:
+      register: version
+
+    - debug:
+        msg: "{{version}}"
