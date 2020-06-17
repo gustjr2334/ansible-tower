@@ -8,6 +8,5 @@
       junos_facts:
       register: version
 
-    - name: Print version
-      debug:
+    - debug:
         msg: "{{version.ansible_net_version}}"
