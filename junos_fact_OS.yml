@@ -1,0 +1,24 @@
+---
+- name: Get Device OS
+  hosts:
+    - all
+  roles:
+    - Juniper.junos
+  connection: netconf
+  gather_facts: no
+
+  vars:
+    credentials:
+      host: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+
+  tasks:
+
+    - name: Retrieve facts from devices running Junos OS
+      junos_facts:
+        provider: "{{ credentials }}"
+
+    - name: Print version
+      debug:
+        var: ansible_net_version
